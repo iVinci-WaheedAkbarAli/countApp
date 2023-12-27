@@ -8,7 +8,14 @@ type Func = {
 
 const Counter: React.FC<Func> = ({ change1, change2, count }) => {
   return (
-    <Box boxShadow="lg" rounded="lg" bg="white" width="50%" margin="0 auto">
+    <Box
+      boxShadow="lg"
+      p={10}
+      rounded="lg"
+      bg="white"
+      width="50%"
+      margin="0 auto"
+    >
       <Text fontSize="40px">React Counter</Text>
       <Text fontSize="60px" color="blue.500">
         {count}
