@@ -1,12 +1,16 @@
 import React from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
-type Func = {
-  change1: () => void;
-  change2: () => void;
-  count: number;
+type CounterProps = {
+  incrementCount: () => void;
+  decrementCount: () => void;
+  counterValue: number;
 };
 
-const Counter: React.FC<Func> = ({ change1, change2, count }) => {
+const Counter: React.FC<CounterProps> = ({
+  incrementCount,
+  decrementCount,
+  counterValue,
+}) => {
   return (
     <Box
       boxShadow="lg"
@@ -18,7 +22,7 @@ const Counter: React.FC<Func> = ({ change1, change2, count }) => {
     >
       <Text fontSize="40px">React Counter</Text>
       <Text fontSize="60px" color="blue.500">
-        {count}
+        {counterValue}
       </Text>
       <Button
         colorScheme="linkedin"
@@ -27,11 +31,17 @@ const Counter: React.FC<Func> = ({ change1, change2, count }) => {
         mr={10}
         w={20}
         h={20}
-        onClick={change2}
+        onClick={incrementCount}
       >
         +
       </Button>
-      <Button rounded="full" fontSize="50px" w={20} h={20} onClick={change1}>
+      <Button
+        rounded="full"
+        fontSize="50px"
+        w={20}
+        h={20}
+        onClick={decrementCount}
+      >
         -
       </Button>
     </Box>

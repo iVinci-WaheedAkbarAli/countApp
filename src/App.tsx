@@ -2,18 +2,22 @@ import { useState } from "react";
 import Counter from "./Counter";
 
 const App = () => {
-  const [count, setCount] = useState<number>(0);
+  const [counterValue, setCountValue] = useState<number>(0);
 
-  const change1 = () => {
-    setCount(count - 1);
+  const decrementCount = () => {
+    setCountValue(counterValue - 1);
   };
-  const change2 = () => {
-    setCount((count) => count + 1);
+  const incrementCount = () => {
+    setCountValue((counterValue) => counterValue + 1);
   };
 
   return (
     <>
-      <Counter change1={change1} change2={change2} count={count} />
+      <Counter
+        decrementCount={decrementCount}
+        incrementCount={incrementCount}
+        counterValue={counterValue}
+      />
     </>
   );
 };
