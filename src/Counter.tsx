@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
 type CounterProps = {
-  incrementCount: () => void;
-  decrementCount: () => void;
+  increaseCount: () => void;
+  decreaseCount: () => void;
   counterValue: number;
 };
 
 const Counter: React.FC<CounterProps> = ({
-  incrementCount,
-  decrementCount,
+  increaseCount,
+  decreaseCount,
   counterValue,
 }) => {
   return (
@@ -31,7 +31,7 @@ const Counter: React.FC<CounterProps> = ({
         mr={10}
         w={20}
         h={20}
-        onClick={incrementCount}
+        onClick={increaseCount}
       >
         +
       </Button>
@@ -40,7 +40,7 @@ const Counter: React.FC<CounterProps> = ({
         fontSize="50px"
         w={20}
         h={20}
-        onClick={decrementCount}
+        onClick={decreaseCount}
       >
         -
       </Button>

@@ -4,18 +4,18 @@ import Counter from "./Counter";
 const App = () => {
   const [counterValue, setCountValue] = useState<number>(0);
 
-  const decrementCount = () => {
+  const decreaseCount = () => {
     setCountValue(counterValue - 1);
   };
-  const incrementCount = () => {
+  const increaseCount = () => {
     setCountValue((counterValue) => counterValue + 1);
   };
 
   return (
     <>
       <Counter
-        decrementCount={decrementCount}
-        incrementCount={incrementCount}
+        decreaseCount={decreaseCount}
+        increaseCount={increaseCount}
         counterValue={counterValue}
       />
     </>
